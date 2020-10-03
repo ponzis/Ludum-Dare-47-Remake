@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Assertions.Comparers;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(Text))]
 public class FPSCounter : MonoBehaviour
 {
