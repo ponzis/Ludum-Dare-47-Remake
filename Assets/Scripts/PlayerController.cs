@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -42,6 +43,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetButton("Cancel"))
+        {
+            Application.Quit();
+        }
+        
         if (Input.GetButton("Fire1"))
         {
             Debug.Log("Fire1");
