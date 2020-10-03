@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e3da4bc4440cd47aa90f8af6414418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frequency: 0.5
   boxRect:
     serializedVersion: 2
     x: 0
@@ -163,7 +164,7 @@ MonoBehaviour:
     m_Normal:
       m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_TextColor: {r: 0.764151, g: 0.16220188, b: 0.16220188, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_ScaledBackgrounds: []

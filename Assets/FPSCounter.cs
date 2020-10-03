@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class FPSCounter : MonoBehaviour
 {
     public float frequency = 0.5f;
@@ -10,8 +11,7 @@ public class FPSCounter : MonoBehaviour
     
     public Rect boxRect;
     public GUIStyle style = new GUIStyle();
-
-
+    
     private void Start()
     {
         StartCoroutine(FPS());
