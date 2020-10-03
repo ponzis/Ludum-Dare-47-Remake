@@ -35,8 +35,8 @@ public class FPSCounter : MonoBehaviour
     {
         while (true)
         {
-            var fps =Math.Max(Mathf.RoundToInt(_accum/_frames), 0);
-            _fpsCounter.text = FormatFPS(fps);
+            var fps =Mathf.Max(Mathf.Round(_accum/_frames), 0);
+            _fpsCounter.text = FormatFPS((int)fps);
             _accum = 0f;
             _frames = 0;
             yield return new WaitForSeconds(frequency);
