@@ -2,37 +2,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
+using UnityEngine.UI;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(Text))]
 public class FPSCounter : MonoBehaviour
 {
     public float frequency = 0.5f;
-    private int _fps;
     
-    public Rect boxRect;
-    public GUIStyle style = new GUIStyle();
+    private float _accum = 0f;
+    private int _frames = 0;
+
+    private Text _fpsCounter;
     
-    private void Start()
+    void Awake()
+    {
+        _fpsCounter = GetComponent<Text>();
+    }
+
+    private void  Start()
     {
         StartCoroutine(FPS());
+    }
+
+    void Update()
+    {
+        _accum += Time.timeScale / Time.deltaTime;
+        ++_frames;
     }
     
     private IEnumerator FPS()
     {
         while (true)
         {
-            int lastFrameCount = Time.frameCount;
-            float lastTime = Time.realtimeSinceStartup;
+            var fps =Math.Max(Mathf.RoundToInt(_accum/_frames), 0);
+            _fpsCounter.text = FormatFPS(fps);
+            _accum = 0f;
+            _frames = 0;
             yield return new WaitForSeconds(frequency);
-            float timeSpan = Time.realtimeSinceStartup - lastTime;
-            int frameCount = Time.frameCount - lastFrameCount;
-            _fps = Mathf.RoundToInt(frameCount / timeSpan);
         }
     }
-    
-    private void OnGUI()
+
+    private string FormatFPS(int fps)
     {
-        GUI.Box(boxRect, "");
-        GUI.Label(boxRect, " " + _fps + "fps", style);
+        Debug.Log(fps);
+        return $"{fps}fps";
     }
 }
