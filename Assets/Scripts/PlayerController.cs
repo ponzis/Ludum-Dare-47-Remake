@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public partial class PlayerController : MonoBehaviour
 {
 
     private void SetHealth(int value)
@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetButton("Cancel"))
         {
             Application.Quit();
@@ -86,14 +85,12 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Hit");
         foreach (var contact in other.contacts)
         {
             Debug.DrawRay(contact.point, contact.normal, Color.white);
         }
         
-        var enemy = other.collider.GetComponent<EnemyController>();
-        if(enemy)
+        if (other.gameObject.TryGetComponent(out EnemyController enemy))
         {
             SetHealth(0);
             Destroy(other.gameObject);
