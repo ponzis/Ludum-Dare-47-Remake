@@ -2069,12 +2069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcc7c84469f4ef43802efba88f768af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 10
   spawnCooldown: 1
-  enemies:
-  - {fileID: 3853942846637802967, guid: 69df10421f14fee4494df59d2e5588e3, type: 3}
-  SpawnProb: 01000000
-  spawnProb: 0.5
+  spawner: {fileID: 0}
 --- !u!1 &1719039274
 GameObject:
   m_ObjectHideFlags: 0
