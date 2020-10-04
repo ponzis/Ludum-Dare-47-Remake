@@ -45,7 +45,6 @@ public class FPSCounter : MonoBehaviour
 
     private string FormatFPS(int fps)
     {
-        Debug.Log(fps);
         return $"{fps}fps";
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,13 +12,23 @@ public class PlayerController : MonoBehaviour
 
     private void SetHealth(int value)
     {
-        Health = value;
-        _healthIndicator.Health = value;
+        _health = value;
+       
+        _healthIndicator.Health = HealthPercent;
     }
     
-    public int Health = 3;
+    
+    [SerializeField]
+    private int _health = 3;
+    
+    public int Health
+    {
+        set => SetHealth(value);
+        get => _health;
+    }
+    
     public int MaxHealth = 5;
-
+    
     public float HealthPercent { get => (float) Health/MaxHealth; }
 
     public float Speed = 1f;
@@ -48,17 +59,13 @@ public class PlayerController : MonoBehaviour
         {
             Application.Quit();
         }
-        
-        if (Input.GetButton("Fire1"))
-        {
-            Debug.Log("Fire1");
-            _weapons.Activate();
-        }
+        //TODO remove
+        Health = _health;
     }
 
     private void FixedUpdate()
     {
-        var direction = new Vector3(Input.GetAxisRaw("Horizontal"),0);
+        var direction = new Vector3(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized;
         var movement = direction * Speed * Time.fixedDeltaTime;
         _rigidBody.MovePosition(transform.position + movement);
     }

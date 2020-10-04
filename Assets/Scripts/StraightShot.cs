@@ -3,11 +3,11 @@ using UnityEngine.Serialization;
 
 public class StraightShot : WeaponsController
 {
-    [FormerlySerializedAs("Speed")] public float speed = 25;
+    public float speed = 25;
 
-    [FormerlySerializedAs("LifeTime")] public float lifeTime = 5f;
+    public float lifeTime = 5f;
 
-    [FormerlySerializedAs("SpawnDelay")] public float spawnDelay = 2f;
+    public float spawnDelay = 2f;
 
     private float _nextTime;
     
@@ -21,6 +21,7 @@ public class StraightShot : WeaponsController
             Debug.Log($"Creating {lifeTime}");
             clone.GetComponent<Rigidbody2D>().AddForce(Vector3.up * speed);
             _nextTime = Time.time + spawnDelay;
+            _audioSource.Play();
         }
 
     }
