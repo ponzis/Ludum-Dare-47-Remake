@@ -2429,6 +2429,12 @@ MonoBehaviour:
   _health: 3
   MaxHealth: 10
   Speed: 3
+  BoundinBox:
+    serializedVersion: 2
+    x: 45
+    y: -5
+    width: 10
+    height: 10
   _healthIndicator: {fileID: 882241525}
   _weapons: {fileID: 0}
 --- !u!212 &2140305882

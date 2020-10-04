@@ -32,8 +32,9 @@ public class PlayerController : MonoBehaviour
     public float HealthPercent { get => (float) Health/MaxHealth; }
 
     public float Speed = 1f;
-
-
+    
+    public Rect BoundinBox;
+    
     private Vector3 _direction  = Vector3.zero;
     
     public  HealthIndicator _healthIndicator;
@@ -66,10 +67,22 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         var direction = new Vector3(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized;
+        
         var movement = direction * Speed * Time.fixedDeltaTime;
-        _rigidBody.MovePosition(transform.position + movement);
+        var clamped = MovementClamp(transform.position + movement, BoundinBox);
+        _rigidBody.MovePosition(clamped);
+        
     }
 
+
+
+
+    private Vector3 MovementClamp(Vector2 pos, Rect box)
+    {
+        var x = Mathf.Clamp(pos.x, box.xMin, box.xMax);
+        var y = Mathf.Clamp(pos.y, box.yMin, box.yMax);
+        return new Vector3(x, y);
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -85,5 +98,13 @@ public class PlayerController : MonoBehaviour
             SetHealth(0);
             Destroy(other.gameObject);
         }
+    }
+    
+    
+    void OnDrawGizmosSelected()
+    {
+        // Draw a semitransparent blue cube at the transforms position
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(BoundinBox.center, BoundinBox.size);
     }
 }
