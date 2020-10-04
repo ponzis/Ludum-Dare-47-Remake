@@ -29,16 +29,16 @@ public class CassetteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Alpha1)) Trigger(Cassettes[0]);
-        if (Input.GetButton("Fire2") || Input.GetKey(KeyCode.Alpha2)) Trigger(Cassettes[1]);
-        if (Input.GetButton("Fire3") || Input.GetKey(KeyCode.Alpha3)) Trigger(Cassettes[2]);
+        if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Alpha1)) Trigger(CasseteCash[0]);
+        if (Input.GetButton("Fire2") || Input.GetKey(KeyCode.Alpha2)) Trigger(CasseteCash[1]);
+        if (Input.GetButton("Fire3") || Input.GetKey(KeyCode.Alpha3)) Trigger(CasseteCash[2]);
     }
 
-    void Trigger(WeaponsController controller)
+    void Trigger(Cassette controller)
     {
         if (controller)
         {
-            controller.Activate();
+            controller.Trigger();
         }
     }
 }

@@ -7,11 +7,9 @@ public class StraightShot : WeaponsController
 
     public float lifeTime = 5f;
 
-    public float spawnDelay = 2f;
-
     private float _nextTime;
     
-    public override void Activate()
+    public override bool Activate()
     {
 
         if (Time.time > _nextTime)
@@ -22,7 +20,9 @@ public class StraightShot : WeaponsController
             clone.GetComponent<Rigidbody2D>().AddForce(Vector3.up * speed);
             _nextTime = Time.time + spawnDelay;
             _audioSource.Play();
+            return true;
         }
 
+        return false;
     }
 }

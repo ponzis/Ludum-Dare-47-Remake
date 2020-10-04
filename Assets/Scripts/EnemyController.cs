@@ -28,8 +28,9 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
-
+    
     private void FixedUpdate()
     {
         var movement = Vector3.down * Speed * Time.fixedDeltaTime;

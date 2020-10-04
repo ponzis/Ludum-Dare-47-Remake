@@ -12,7 +12,7 @@ public abstract class WeaponsController : MonoBehaviour
     public String Name;
     public Sprite Icon;
     public GameObject bullet;
-
+    public float spawnDelay = 2f;
 
     protected AudioSource _audioSource;
     private void Awake()
@@ -20,6 +20,6 @@ public abstract class WeaponsController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public abstract void Activate();
+    public abstract bool Activate();
     
 }
