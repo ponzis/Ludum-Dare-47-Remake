@@ -11,7 +11,6 @@ public abstract class WeaponsController : MonoBehaviour
     
     public String Name;
     public Sprite Icon;
-    public GameObject bullet;
     public float spawnDelay = 2f;
 
     protected AudioSource _audioSource;
