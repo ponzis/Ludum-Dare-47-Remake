@@ -14,13 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Straight Shot
   Icon: {fileID: 21300000, guid: bbaec01a947948d458c9758621c0f17d, type: 3}
-  Audio: {fileID: 8300000, guid: 55d16e9baec6ecc4caaedf60483df458, type: 3}
+  Audio: {fileID: 8300000, guid: e69c4b7f285d6b641931fd2e642a3f0a, type: 3}
   spawnDelay: 2
   Tempo: 0
   Player: 1
   locked: 0
   bullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
   largeBullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
-  speed: 25
-  lifeTime: 5
   delay: 0.2
