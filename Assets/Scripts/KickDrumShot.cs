@@ -9,7 +9,6 @@ using UnityEngine.Serialization;
 public class KickDrumShot : WeaponsScript
 {
     public GameObject bullet;
-    public GameObject largeBullet;
     public float delay = 0.2f;
 
     private void SpawnBullet(GameObject gameObject, Transform transform)
@@ -25,10 +24,6 @@ public class KickDrumShot : WeaponsScript
         while (Time.time < nextTime)
         {
             SpawnBullet(bullet, transform);
-            yield return new WaitForSeconds(delay);
-            SpawnBullet(bullet, transform);
-            yield return new WaitForSeconds(delay * 2);
-            SpawnBullet(largeBullet, transform);
             yield return new WaitForSeconds(delay);
         }
     }
