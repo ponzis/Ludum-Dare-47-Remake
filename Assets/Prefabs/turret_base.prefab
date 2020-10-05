@@ -147,6 +147,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   Health: 5
+  weapon: {fileID: 0}
+  FacingTransform: {fileID: 4269630000182904828}
+  delay: 4
+  ImpactDamage: 10
 --- !u!1 &5445813459726662623
 GameObject:
   m_ObjectHideFlags: 0
