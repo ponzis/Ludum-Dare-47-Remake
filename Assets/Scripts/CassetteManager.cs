@@ -12,6 +12,7 @@ public class CassetteManager : MonoBehaviour
 
 
     public Cassette[] CasseteCash;
+
     
     private void Start()
     {
@@ -28,6 +29,7 @@ public class CassetteManager : MonoBehaviour
         if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Alpha1)) Trigger(CasseteCash[0]);
         if (Input.GetButton("Fire2") || Input.GetKey(KeyCode.Alpha2)) Trigger(CasseteCash[1]);
         if (Input.GetButton("Fire3") || Input.GetKey(KeyCode.Alpha3)) Trigger(CasseteCash[2]);
+        Trigger(CasseteCash[3]);
     }
 
     void Trigger(Cassette controller)
