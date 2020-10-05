@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8771a5924ba48e989b892fcd67e8c02, type: 3}
+  m_Name: StraightShot
+  m_EditorClassIdentifier: 
+  Name: Straight Shot
+  Icon: {fileID: 21300000, guid: bbaec01a947948d458c9758621c0f17d, type: 3}
+  Audio: {fileID: 8300000, guid: 55d16e9baec6ecc4caaedf60483df458, type: 3}
+  spawnDelay: 2
+  Tempo: 0
+  Player: 1
+  locked: 0
+  bullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
+  largeBullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
+  speed: 25
+  lifeTime: 5
+  delay: 0.2

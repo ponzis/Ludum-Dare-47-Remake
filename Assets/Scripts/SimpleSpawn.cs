@@ -41,7 +41,6 @@ public class SimpleSpawn : SpawnSystem
     
     private void SpawnEnemy(GameObject enemy, Vector3 position)
     {
-        Debug.Log($"Spawning {enemy.name}");
         var pos = GetSpawnPos(position, offset);
         var obj = Instantiate(enemy.gameObject);
         obj.transform.position = pos;

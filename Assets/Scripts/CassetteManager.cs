@@ -4,17 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class CassetteManager : MonoBehaviour
 {
     // Start is called before the first frame update
-
-
-    public WeaponsController[] Cassettes;
+    public WeaponsScript[] Cassettes;
 
 
     public Cassette[] CasseteCash;
-
-
+    
     private void Start()
     {
         for (int i = 0; i < Cassettes.Length; i++)
@@ -24,8 +22,6 @@ public class CassetteManager : MonoBehaviour
         }
     }
     
-
-
     // Update is called once per frame
     void Update()
     {

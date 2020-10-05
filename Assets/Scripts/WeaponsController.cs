@@ -6,19 +6,16 @@ using UnityEngine.UI;
 
 
 [RequireComponent(typeof(AudioSource))]
-public abstract class WeaponsController : MonoBehaviour
+public class WeaponsController : MonoBehaviour
 {
-    
-    public String Name;
-    public Sprite Icon;
-    public float spawnDelay = 2f;
+    public WeaponsScript weapon;
+    public AudioSource audioSource;
 
-    protected AudioSource _audioSource;
+    private float _nextTime;
     private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
-    public abstract bool Activate();
-    
+
 }
