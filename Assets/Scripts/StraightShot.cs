@@ -1,51 +1,46 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class StraightShot : WeaponsController
+
+[CreateAssetMenu(menuName = "Create StraightShot", fileName = "StraightShot", order = 0)]
+public class StraightShot : WeaponsScript
 {
     public GameObject bullet;
-    public GameObject large_bullet;
+    public GameObject largeBullet;
     public float speed = 25;
 
     public float lifeTime = 5f;
     public float delay = 0.2f;
     
-    private float _nextTime;
-    
-    public override bool Activate()
+    private void SpawnBullet(GameObject gameObject, Transform transform)
     {
-
-        if (Time.time > _nextTime)
-        {
-            _audioSource.Play();
-            StartCoroutine(BulletTimer());
-            _nextTime = Time.time + spawnDelay;
-            return true;
-        }
-
-        return false;
-    }
-
-
-    private void SpawnBullet(GameObject gameObject)
-    {
-        var clone = Instantiate(gameObject, transform.position, transform.rotation);
+        var clone = Instantiate(gameObject, transform);
         Destroy(clone, lifeTime);
+        clone.GetComponent<SimpleBullet>().Player = Player;
         clone.GetComponent<Rigidbody2D>().AddForce(Vector3.up * speed);
     }
 
-    IEnumerator BulletTimer()
+    public override IEnumerator Activate(Transform transform, float nextTime)
     {
-        while (_audioSource.isPlaying)
+
+        if (!locked)
         {
-            SpawnBullet(bullet);
-            yield return new WaitForSeconds(delay);
-            SpawnBullet(bullet);
-            yield return new WaitForSeconds(delay*2);
-            SpawnBullet(large_bullet);
-            yield return new WaitForSeconds(delay);
+            locked = true;
+            while (Time.time < nextTime)
+            {
+                SpawnBullet(bullet, transform);
+                yield return new WaitForSeconds(delay);
+                SpawnBullet(bullet, transform);
+                yield return new WaitForSeconds(delay * 2);
+                SpawnBullet(largeBullet, transform);
+                yield return new WaitForSeconds(delay);
+            }
+            locked = false;
         }
     }
-    
 }
+
+

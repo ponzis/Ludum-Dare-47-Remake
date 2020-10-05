@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f30454c06c64b2e9aabb940c671461d, type: 3}
   m_Name: Spawner
   m_EditorClassIdentifier: 
-  offset: 1
-  spawnProb: 0.5
-  enemies: []
-  SpawnProb: 
+  offset: 10
+  spawnProb: 0.9
+  enemies:
+  - {fileID: 3853942846637802967, guid: 69df10421f14fee4494df59d2e5588e3, type: 3}
+  SpawnProb: 01000000

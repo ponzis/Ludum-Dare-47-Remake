@@ -17,15 +17,12 @@ public class SpawnerController : MonoBehaviour
         if (Time.time > _nextSpawn)
         {
             spawner.Spawn(transform.position);
-            
             _nextSpawn = Time.time + spawnCooldown;
         }
     }
-    
     
     void OnDrawGizmosSelected()
     {
         spawner.DrawGizmos(transform.position);
     }
-
 }

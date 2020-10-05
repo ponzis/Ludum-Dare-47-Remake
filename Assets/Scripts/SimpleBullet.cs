@@ -5,9 +5,7 @@ namespace DefaultNamespace
 {
     public class SimpleBullet : MonoBehaviour
     {
-        private void Start()
-        {
-            
-        }
+        public bool Player;
+
     }
 }
