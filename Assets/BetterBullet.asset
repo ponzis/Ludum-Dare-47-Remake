@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f30454c06c64b2e9aabb940c671461d, type: 3}
-  m_Name: Spawner
+  m_Script: {fileID: 11500000, guid: c087831396f344cebca63b6c21c62ae8, type: 3}
+  m_Name: BetterBullet
   m_EditorClassIdentifier: 
-  width: 20
-  spawnProb: 0.9
-  enemies:
-  - {fileID: 3853942846637802967, guid: 69df10421f14fee4494df59d2e5588e3, type: 3}
-  SpawnProb: 01000000
-  Tracks: 8
+  Name: 
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+  spawnDelay: 2
+  Tempo: 0
+  Player: 0
+  locked: 0
+  Bullets: []
+  Delays: []
+  Angles: []
