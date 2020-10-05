@@ -19,6 +19,5 @@ MonoBehaviour:
   Tempo: 1
   Player: 1
   locked: 0
-  bullet: {fileID: 1913553237892787763, guid: 658b99d318df2ed4fb3ac73d0e8f0341, type: 3}
-  largeBullet: {fileID: 0}
-  delay: 0
+  bullet: {fileID: 6251048034640412569, guid: 56116bc284fc78a47b9e74f910663fab, type: 3}
+  delay: 2
