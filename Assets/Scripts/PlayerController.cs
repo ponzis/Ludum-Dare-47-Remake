@@ -33,10 +33,7 @@ public partial class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Cancel"))
-        {
-            Application.Quit();
-        }
+        
     }
 
     private void FixedUpdate()

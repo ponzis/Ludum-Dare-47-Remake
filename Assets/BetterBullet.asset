@@ -12,13 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c087831396f344cebca63b6c21c62ae8, type: 3}
   m_Name: BetterBullet
   m_EditorClassIdentifier: 
-  Name: 
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Name: Better
+  Icon: {fileID: 21300000, guid: 6834acba0f688a64b863911cb1f09e7c, type: 3}
+  Audio: {fileID: 8300000, guid: 058ec435ed2f1b94aa86961cb8364133, type: 3}
   spawnDelay: 2
   Tempo: 0
-  Player: 0
+  Player: 1
   locked: 0
-  Bullets: []
-  Delays: []
-  Angles: []
+  Bullets:
+  - {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
+  - {fileID: 1913553237892787763, guid: 658b99d318df2ed4fb3ac73d0e8f0341, type: 3}
+  Delays:
+  - 0.6
+  - 0.1
+  Angles:
+  - 70
+  - -70
