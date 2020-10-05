@@ -1,51 +1,35 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class StraightShot : WeaponsController
+
+[CreateAssetMenu(menuName = "Create StraightShot", fileName = "StraightShot", order = 0)]
+public class StraightShot : WeaponsScript
 {
     public GameObject bullet;
-    public GameObject large_bullet;
-    public float speed = 25;
-
-    public float lifeTime = 5f;
+    public GameObject largeBullet;
     public float delay = 0.2f;
     
-    private float _nextTime;
-    
-    public override bool Activate()
+    private void SpawnBullet(GameObject gameObject, Transform transform)
     {
-
-        if (Time.time > _nextTime)
-        {
-            _audioSource.Play();
-            StartCoroutine(BulletTimer());
-            _nextTime = Time.time + spawnDelay;
-            return true;
-        }
-
-        return false;
+        var clone = Instantiate(gameObject);
+        clone.transform.position = transform.position;
+        clone.transform.rotation = transform.rotation;
+        clone.GetComponent<SimpleBullet>().Player = Player;
     }
 
-
-    private void SpawnBullet(GameObject gameObject)
+    public override IEnumerator Activate(Transform transform, float nextTime)
     {
-        var clone = Instantiate(gameObject, transform.position, transform.rotation);
-        Destroy(clone, lifeTime);
-        clone.GetComponent<Rigidbody2D>().AddForce(Vector3.up * speed);
-    }
-
-    IEnumerator BulletTimer()
-    {
-        while (_audioSource.isPlaying)
+        while (Time.time < nextTime)
         {
-            SpawnBullet(bullet);
+            SpawnBullet(bullet, transform);
             yield return new WaitForSeconds(delay);
-            SpawnBullet(bullet);
-            yield return new WaitForSeconds(delay*2);
-            SpawnBullet(large_bullet);
+            SpawnBullet(bullet, transform);
+            yield return new WaitForSeconds(delay * 2);
+            SpawnBullet(largeBullet, transform);
             yield return new WaitForSeconds(delay);
         }
     }
-    
 }

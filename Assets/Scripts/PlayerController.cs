@@ -1,44 +1,22 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public partial class PlayerController : MonoBehaviour
 {
-
-    private void SetHealth(int value)
-    {
-        _health = value;
-       
-        _healthIndicator.Health = HealthPercent;
-    }
-    
-    
-    [SerializeField]
-    private int _health = 3;
-    
-    public int Health
-    {
-        set => SetHealth(value);
-        get => _health;
-    }
-    
+    public float Health = 3;
     public int MaxHealth = 5;
-    
-    public float HealthPercent { get => (float) Health/MaxHealth; }
+    public float HealthPercent { get => Health/MaxHealth; }
 
     public float Speed = 1f;
     
     public Rect BoundinBox;
-    
-    private Vector3 _direction  = Vector3.zero;
-    
-    public  HealthIndicator _healthIndicator;
-    public WeaponsController _weapons;
     
     private Rigidbody2D _rigidBody;
     
@@ -49,19 +27,16 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetHealth(Health);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetButton("Cancel"))
         {
             Application.Quit();
         }
-        //TODO remove
-        Health = _health;
     }
 
     private void FixedUpdate()
@@ -86,21 +61,35 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Hit");
-        foreach (var contact in other.contacts)
+        if (other.gameObject.TryGetComponent(out EnemyController enemy))
         {
-            Debug.DrawRay(contact.point, contact.normal, Color.white);
-        }
-        
-        var enemy = other.collider.GetComponent<EnemyController>();
-        if(enemy)
-        {
-            SetHealth(0);
+            TakeDamage(enemy.ImpactDamage);
             Destroy(other.gameObject);
         }
     }
-    
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out SimpleBullet simpleBullet))
+        {
+            if (!simpleBullet.Player)
+            {
+                TakeDamage(simpleBullet.Dammage);
+                Destroy(other.gameObject);
+            }
+            
+        }
+    }
+
+    private void TakeDamage(float damage)
+    {
+        Health = Mathf.Clamp(Health - damage, 0, MaxHealth);
+        if (Health <= 0)
+        {
+            Debug.Log("The player has died.");
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         // Draw a semitransparent blue cube at the transforms position
