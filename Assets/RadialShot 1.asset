@@ -9,16 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8771a5924ba48e989b892fcd67e8c02, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: 66739d0b518d44eb92af8a66d2009b31, type: 3}
+  m_Name: RadialShot 1
   m_EditorClassIdentifier: 
-  Name: Enemy
-  Icon: {fileID: 21300000, guid: bbaec01a947948d458c9758621c0f17d, type: 3}
-  Audio: {fileID: 8300000, guid: ed79399f8b3afa54b8ddb7dfced2a5ba, type: 3}
-  spawnDelay: 0.2
+  Name: Radial
+  Icon: {fileID: 21300000, guid: bd53a01c14da3904eb2d202f0c8a1d95, type: 3}
+  Audio: {fileID: 0}
+  spawnDelay: 2
   Tempo: 0
-  Player: 0
+  Player: 1
   locked: 0
   bullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
-  largeBullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
-  delay: 0.6
+  delay: 0.2
+  pedals: 5
+  angle: 180

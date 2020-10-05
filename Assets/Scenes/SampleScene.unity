@@ -272,7 +272,7 @@ MonoBehaviour:
   Cassettes:
   - {fileID: 11400000, guid: 1c18593aa00c4514d98a95b08e3540ef, type: 2}
   - {fileID: 11400000, guid: 418ec6581ab3f3d4bb7802afdb89ab84, type: 2}
-  - {fileID: 11400000, guid: 418ec6581ab3f3d4bb7802afdb89ab84, type: 2}
+  - {fileID: 11400000, guid: 6297e34a0b8725c428aef620c152d1ae, type: 2}
   CasseteCash:
   - {fileID: 1158725335}
   - {fileID: 1871686425}
@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 127179554587368285, guid: 3bd1853cf9f5fe54c8a704e72f758a6a, type: 3}
       propertyPath: playerPos
       value: 
-      objectReference: {fileID: 2140305883}
+      objectReference: {fileID: 1301549804}
     - target: {fileID: 7042959814492593817, guid: 3bd1853cf9f5fe54c8a704e72f758a6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1525,7 +1525,7 @@ PrefabInstance:
     - target: {fileID: 127179554587368285, guid: 3bd1853cf9f5fe54c8a704e72f758a6a, type: 3}
       propertyPath: playerPos
       value: 
-      objectReference: {fileID: 2140305883}
+      objectReference: {fileID: 1301549804}
     - target: {fileID: 7042959814492593817, guid: 3bd1853cf9f5fe54c8a704e72f758a6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1874,6 +1874,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522d2c56ee6029a4eba055864f0f6e2d, type: 3}
+--- !u!1 &1301549803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301549804}
+  m_Layer: 0
+  m_Name: Weapon Mount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1301549804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301549803}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2140305883}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1529831327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7042959814492593822, guid: 3bd1853cf9f5fe54c8a704e72f758a6a, type: 3}
@@ -2511,6 +2541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 235568026}
+  - {fileID: 1301549804}
   m_Father: {fileID: 139442544}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2579,7 +2610,7 @@ PrefabInstance:
     - target: {fileID: 127179554587368285, guid: 3bd1853cf9f5fe54c8a704e72f758a6a, type: 3}
       propertyPath: playerPos
       value: 
-      objectReference: {fileID: 2140305883}
+      objectReference: {fileID: 1301549804}
     - target: {fileID: 7042959814492593816, guid: 3bd1853cf9f5fe54c8a704e72f758a6a, type: 3}
       propertyPath: m_Sprite
       value: 

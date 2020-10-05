@@ -9,16 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8771a5924ba48e989b892fcd67e8c02, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: fca7e9c3305e4b638a8d599e6e9c3bea, type: 3}
+  m_Name: SingleShot
   m_EditorClassIdentifier: 
-  Name: Enemy
-  Icon: {fileID: 21300000, guid: bbaec01a947948d458c9758621c0f17d, type: 3}
-  Audio: {fileID: 8300000, guid: ed79399f8b3afa54b8ddb7dfced2a5ba, type: 3}
-  spawnDelay: 0.2
+  Name: Single
+  Icon: {fileID: 21300000, guid: a2fde5991b3a6164a8f8fd3328a511c5, type: 3}
+  Audio: {fileID: 8300000, guid: 55d16e9baec6ecc4caaedf60483df458, type: 3}
+  spawnDelay: 2
   Tempo: 0
   Player: 0
   locked: 0
   bullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
-  largeBullet: {fileID: 7870890440663462040, guid: 4d39f2f54603e6f4f8202014f56d14f7, type: 3}
-  delay: 0.6
