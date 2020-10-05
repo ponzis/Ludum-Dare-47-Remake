@@ -1355,6 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc059fe3c217acf4bb9f67d4b41595f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2140305881}
   LeftStop: 40
   RightRot: -40
   _needle: {fileID: 1845583452}
@@ -1902,7 +1903,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2140305883}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1529831327 stripped
 GameObject:
@@ -2467,7 +2468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71b8119651d9f4479f049d63a879b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  Health: 3
   MaxHealth: 10
   Speed: 3
   BoundinBox:
@@ -2476,8 +2477,6 @@ MonoBehaviour:
     y: -5
     width: 10
     height: 10
-  _healthIndicator: {fileID: 882241525}
-  _weapons: {fileID: 0}
 --- !u!212 &2140305882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2540,8 +2539,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.437, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 235568026}
   - {fileID: 1301549804}
+  - {fileID: 235568026}
   m_Father: {fileID: 139442544}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

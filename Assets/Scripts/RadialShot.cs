@@ -34,16 +34,10 @@ public class RadialShot : WeaponsScript
 
     public override IEnumerator Activate(Transform transform, float nextTime)
     {
-
-        if (!locked)
+        while (Time.time < nextTime)
         {
-            locked = true;
-            while (Time.time < nextTime)
-            {
-                SpawnBullet(bullet, transform);
-                yield return new WaitForSeconds(delay);
-            }
-            locked = false;
+            SpawnBullet(bullet, transform);
+            yield return new WaitForSeconds(delay);
         }
     }
     

@@ -6,15 +6,13 @@ using UnityEngine;
 public class SingleShot : WeaponsScript
 {
     public GameObject bullet;
-    private GameObject SpawnBullet(GameObject gameObject, Transform transform)
+    private void SpawnBullet(GameObject gameObject, Transform transform)
     {
         var clone = Instantiate(gameObject);
         clone.transform.position = transform.position;
         clone.transform.rotation = transform.rotation;
         clone.GetComponent<SimpleBullet>().Player = Player;
-        return clone;
     }
-    
     
     public override IEnumerator Activate(Transform transform, float nextTime)
     {
