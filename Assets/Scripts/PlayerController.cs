@@ -19,7 +19,7 @@ public partial class PlayerController : MonoBehaviour
     public Rect BoundinBox;
     
     private Rigidbody2D _rigidBody;
-    
+
     void Awake() {
         _rigidBody = GetComponent<Rigidbody2D>();
     }
