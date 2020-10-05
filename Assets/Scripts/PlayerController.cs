@@ -19,7 +19,7 @@ public partial class PlayerController : MonoBehaviour
     public Rect BoundinBox;
     
     private Rigidbody2D _rigidBody;
-    
+
     void Awake() {
         _rigidBody = GetComponent<Rigidbody2D>();
     }
@@ -33,10 +33,7 @@ public partial class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Cancel"))
-        {
-            Application.Quit();
-        }
+        
     }
 
     private void FixedUpdate()
