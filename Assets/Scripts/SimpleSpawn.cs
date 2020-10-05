@@ -3,11 +3,14 @@
 [CreateAssetMenu(menuName = "Create SimpleSpawn", fileName = "SimpleSpawn", order = 0)]
 public class SimpleSpawn : SpawnSystem
 {
-    public float offset = 1f;
+    public float width = 10f;
     public float spawnProb = 0.5f;
     
     public GameObject[] enemies;
     public int[] SpawnProb;
+
+
+    public int Tracks = 8;
     
     
     private int GetProbSum()
@@ -41,16 +44,17 @@ public class SimpleSpawn : SpawnSystem
     
     private void SpawnEnemy(GameObject enemy, Vector3 position)
     {
-        var pos = GetSpawnPos(position, offset);
+        var pos = GetSpawnPos(position, width);
         var obj = Instantiate(enemy.gameObject);
         obj.transform.position = pos;
     }
     
-    private Vector3 GetSpawnPos(Vector3 pos, float offset)
+    private Vector3 GetSpawnPos(Vector3 pos, float width)
     {
-        
-        var x = Random.Range(-offset, offset);
-        //Fix onto 8 bands
+        var trackOffset = width / Tracks;
+        var half = Tracks / 2;
+        var r = Random.Range(-half, half);
+        var x = r*trackOffset + trackOffset/2;
         return new Vector3(pos.x + x, pos.y, pos.z);
     }
 
@@ -59,6 +63,16 @@ public class SimpleSpawn : SpawnSystem
     {
         // Draw a semitransparent blue cube at the transforms position
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(position, new Vector3(offset*2, 1, 1));
+        Gizmos.DrawWireCube(position, new Vector3(width, 1, 1));
+        
+        var trackOffset = width / Tracks;
+        var half = Tracks / 2;
+        for (int i = -half; i <= half; i++)
+        {
+            var x = i*trackOffset;
+            var pos = new Vector3(position.x + x, position.y, position.z);
+            Gizmos.DrawRay(pos, Vector3.down);
+        }
+        
     }
 }
