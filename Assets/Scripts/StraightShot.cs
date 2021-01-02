@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.Serialization;
-
-
-
-
-using System;
-using System.Collections;
-using DefaultNamespace;
-using UnityEngine;
-using UnityEngine.Serialization;
 
 
 [CreateAssetMenu(menuName = "Create StraightShot", fileName = "StraightShot", order = 0)]
