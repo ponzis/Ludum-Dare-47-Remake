@@ -14,7 +14,9 @@ public class DebugUI : MonoBehaviour
 
     public void Awake()
     {
+#if UNITY_EDITOR
         BuildVersion = UpdateBuildVersion();
+#endif
     }
 
     private string UpdateBuildVersion()
