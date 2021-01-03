@@ -1927,7 +1927,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 75, y: 16}
-  m_SizeDelta: {x: 150, y: 16}
+  m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1133734912
 MonoBehaviour:
@@ -1941,13 +1941,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b593ba7b89f347b78b4df7d72cbfe111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildVersion: v1.0.1-2-ge77d03e-dirty
+  BuildVersion: 'main: v1.0.1-7-g4629376-dirty'
   Rect:
     serializedVersion: 2
     x: 5
     y: 0
-    width: 150
-    height: 25
+    width: 320
+    height: 30
+  TextFont: {fileID: 0}
+  TextSize: 20
+  TextColor: {r: 1, g: 1, b: 1, a: 1}
   ShowVersion: 1
 --- !u!1 &1152903301 stripped
 GameObject:

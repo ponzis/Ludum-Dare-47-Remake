@@ -1,6 +1,7 @@
 ﻿using Attributes;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utils;
 
 [ExecuteInEditMode]
@@ -9,7 +10,10 @@ public class DebugUI : MonoBehaviour
     [Label] public string BuildVersion;
 
     public Rect Rect;
-
+    public Font TextFont;
+    public int TextSize = 5;
+    public Color TextColor = Color.white;
+    
     [Header("Debug")] public bool ShowVersion = true;
 
     public void Awake()
@@ -21,14 +25,26 @@ public class DebugUI : MonoBehaviour
 
     private string UpdateBuildVersion()
     {
-        var buildVersion = Git.BuildVersion;
+        var buildVersion = $"{Git.Branch}: {Git.BuildVersion}";
+        
         return buildVersion;
     }
 
     void OnGUI()
     {
         if (!ShowVersion) return;
-        GUI.Label(Rect, BuildVersion);
+
+        var style = new GUIStyle(GUI.skin.label)
+        {
+            font = TextFont, 
+            fontSize = TextSize,
+            normal = new GUIStyleState
+            {
+                textColor = TextColor
+            }
+        };
+
+        GUI.Label(Rect, BuildVersion, style);
     }
 
     void OnDrawGizmos()
